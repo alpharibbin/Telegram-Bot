@@ -1,0 +1,11 @@
+# Render Blueprint
+services:
+  - type: web
+    name: telegram-bot-php
+    env: docker
+    dockerfilePath: ./php/Dockerfile
+    dockerContext: ./php
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: 8262047387:AAEaQYI7PKAxLCwabtmM9jrnE9rW8nvWU50
+
