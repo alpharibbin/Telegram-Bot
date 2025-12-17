@@ -9,9 +9,8 @@ This repository contains step-by-step tutorials and examples for creating Telegr
 ## 🚀 Available Guides
 
 - **[PHP](./php/)** - Build Telegram bots using PHP
-- **[Next.js](./nextjs/)** - Build Telegram bots using Next.js (React framework)
-- **[Node.js](./node/)** - Build Telegram bots using Node.js (deployable to Vercel)
-  - 📦 [Quick Deploy Guide](./DEPLOY_NODE.md) - Deploy only the Node.js bot from root repository
+- **[Next.js](./nextjs/)** - Build Telegram bots using Next.js (React framework) - **Ready for Vercel deployment!**
+- **[Node.js](./nodejs/)** - Build Telegram bots using plain Node.js serverless functions
 
 ## 📖 What is a Telegram Bot?
 
@@ -43,16 +42,21 @@ Before you begin, you'll need:
 
 ```
 .
-├── README.md          # This file
-├── php/              # PHP bot development guide
+├── README.md              # This file
+├── php/                   # PHP bot development guide
 │   └── README.md
-├── nextjs/           # Next.js bot development guide
-│   └── README.md
-└── node/             # Node.js bot development guide
-    ├── README.md
+├── nextjs/                # Next.js bot (ready for Vercel)
+│   ├── app/
+│   │   ├── api/webhook/route.ts
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── scripts/
+│   ├── package.json
+│   └── DEPLOY.md
+└── nodejs/                # Plain Node.js bot
     ├── api/
     │   └── webhook.js
-    ├── bot.js
+    ├── scripts/
     ├── package.json
     └── vercel.json
 ```
@@ -60,7 +64,7 @@ Before you begin, you'll need:
 ## 🛠️ Technologies Covered
 
 - **PHP** - Server-side scripting language
-- **Next.js** - React framework for production
+- **Next.js** - React framework for production (recommended for Vercel)
 - **Node.js** - JavaScript runtime for serverless deployment
 
 ## 📝 Contributing
@@ -70,4 +74,3 @@ Feel free to add more technology guides or improve existing ones!
 ## 📄 License
 
 This project is open source and available for educational purposes.
-

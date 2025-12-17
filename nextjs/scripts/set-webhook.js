@@ -23,7 +23,7 @@ async function setWebhook() {
     await bot.setWebHook(webhookUrl);
     console.log('✅ Webhook set successfully!');
     console.log(`📍 Webhook URL: ${webhookUrl}`);
-    
+
     const info = await bot.getWebHookInfo();
     console.log('\n📊 Webhook info:');
     console.log(JSON.stringify(info, null, 2));
