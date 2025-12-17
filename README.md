@@ -8,9 +8,11 @@ This repository contains step-by-step tutorials and examples for creating Telegr
 
 ## 🚀 Available Guides
 
-- **[PHP](./php/)** - Build Telegram bots using PHP
-- **[Next.js](./nextjs/)** - Build Telegram bots using Next.js (React framework) - **Ready for Vercel deployment!**
-- **[Node.js](./nodejs/)** - Build Telegram bots using plain Node.js serverless functions
+| Technology | Demo Link | Hosting |
+|------------|-----------|---------|
+| **[PHP](./php/)** | [telegram-bot-cne4.onrender.com](https://telegram-bot-cne4.onrender.com/) | Render (Docker) |
+| **[Next.js](./nextjs/)** | [telegram-bot-nextjs-omega.vercel.app](https://telegram-bot-nextjs-omega.vercel.app/) | Vercel |
+| **[Node.js](./nodejs/)** | Coming soon | Vercel |
 
 📖 **[Webhook Setup Guide](./WEBHOOK_SETUP.md)** - All methods to register your webhook (URL, curl, etc.)
 

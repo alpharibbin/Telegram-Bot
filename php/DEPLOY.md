@@ -1,5 +1,11 @@
 # Deploy PHP Telegram Bot to Render
 
+## 🌐 Live Demo
+
+**Demo URL:** [https://telegram-bot-cne4.onrender.com](https://telegram-bot-cne4.onrender.com/)
+
+---
+
 ## 🐳 Docker Deployment on Render
 
 ### Method 1: Using Render Dashboard
