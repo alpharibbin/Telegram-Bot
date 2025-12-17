@@ -62,6 +62,9 @@ Before you begin, you'll need:
 │   ├── api/
 │   ├── scripts/
 │   └── vercel.json
+├── tools/
+│   ├── cli/
+│   └── webhook-tester/
 └── docs/
     ├── README.md
     ├── fundamentals/
@@ -85,6 +88,11 @@ Before you begin, you'll need:
 - **Monetization**: `docs/monetization/README.md`  
 - **Frameworks**: `docs/frameworks/README.md`  
 - **Project Patterns**: `docs/projects/README.md`
+
+## 🔧 Tools
+
+- `tools/cli/` – CLI helpers (e.g., set webhook, check webhook info)  
+- `tools/webhook-tester/` – utilities for testing webhooks locally (ngrok, curl examples)
 
 ## 🛠️ Technologies Covered
 

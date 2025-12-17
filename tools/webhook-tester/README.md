@@ -1,20 +1,23 @@
 # Webhook Tester
 
-Tools to test your webhook endpoint locally.
+Helpers to test your webhook endpoint locally.
 
-## Options
+---
 
-- **ngrok** - Expose local server to internet
-- **localtunnel** - Free alternative to ngrok
-- **Telegram Test Server** - Official test environment
+## 🧪 Options
 
-## Usage
+- **ngrok** – Expose local server to the internet  
+- **localtunnel** – Free alternative to ngrok  
+- **curl** – Manually POST a fake update to your endpoint  
 
-```bash
-# Using ngrok
+---
+
+## 🌐 Using ngrok
+
+1. Start your local bot server (e.g. on `http://localhost:3000`).
+2. Run:
+
 ngrok http 3000
-
-# Set webhook to ngrok URL
-curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://abc123.ngrok.io/api/webhook"
 ```
 
+3. You’ll get a public HTTPS URL like:
