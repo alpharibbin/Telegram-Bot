@@ -13,6 +13,13 @@ A comprehensive guide to understanding Telegram bots from the ground up.
 5. [Updates & Update Flow](#updates--update-flow)
 6. [Long Polling vs Webhooks](#long-polling-vs-webhooks)
 7. [Bot Limitations & Rules](#bot-limitations--rules)
+8. [Bot Setup & Execution](./bot-setup.md)
+9. [Bot State & Conversations](./bot-state.md)
+10. [Inline Mode](./inline-mode.md)
+11. [Files & Media Handling](./files-media.md)
+12. [Commands & Menus](./commands-menus.md)
+13. [Testing & Debugging](./testing-debugging.md)
+14. [Groups & Channels](./groups-channels.md)
 
 ---
 

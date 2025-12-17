@@ -46,24 +46,45 @@ Before you begin, you'll need:
 
 ```
 .
-├── README.md              # This file
-├── php/                   # PHP bot development guide
-│   └── README.md
-├── nextjs/                # Next.js bot (ready for Vercel)
-│   ├── app/
-│   │   ├── api/webhook/route.ts
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── scripts/
-│   ├── package.json
+├── README.md
+├── WEBHOOK_SETUP.md
+├── php/
+│   ├── README.md
+│   ├── Dockerfile
+│   ├── webhook.php
 │   └── DEPLOY.md
-└── nodejs/                # Plain Node.js bot
-    ├── api/
-    │   └── webhook.js
-    ├── scripts/
-    ├── package.json
-    └── vercel.json
+├── nextjs/
+│   ├── README.md
+│   ├── app/
+│   └── DEPLOY.md
+├── nodejs/
+│   ├── README.md
+│   ├── api/
+│   ├── scripts/
+│   └── vercel.json
+└── docs/
+    ├── README.md
+    ├── fundamentals/
+    ├── messages/
+    ├── keyboards/
+    ├── security/
+    ├── scaling/
+    ├── monetization/
+    ├── failures/
+    ├── frameworks/
+    ├── projects/
+    └── best-practices/
 ```
+
+## 📚 Documentation
+
+- **[Docs Index](./docs/README.md)** – All concept guides and deep dives  
+- **Fundamentals**: `docs/fundamentals/` – core concepts, setup, state, inline, files, testing  
+- **Messaging & Keyboards**: `docs/messages/README.md`, `docs/keyboards/README.md`  
+- **Security & Scaling**: `docs/security/README.md`, `docs/scaling/README.md`, `docs/failures/README.md`, `docs/best-practices/README.md`  
+- **Monetization**: `docs/monetization/README.md`  
+- **Frameworks**: `docs/frameworks/README.md`  
+- **Project Patterns**: `docs/projects/README.md`
 
 ## 🛠️ Technologies Covered
 
