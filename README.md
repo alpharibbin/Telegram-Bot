@@ -12,6 +12,8 @@ This repository contains step-by-step tutorials and examples for creating Telegr
 - **[Next.js](./nextjs/)** - Build Telegram bots using Next.js (React framework) - **Ready for Vercel deployment!**
 - **[Node.js](./nodejs/)** - Build Telegram bots using plain Node.js serverless functions
 
+📖 **[Webhook Setup Guide](./WEBHOOK_SETUP.md)** - All methods to register your webhook (URL, curl, etc.)
+
 ## 📖 What is a Telegram Bot?
 
 A Telegram bot is a special account that does not require an additional phone number. Users can interact with bots by sending them messages, commands, and inline requests. Bots can be used for various purposes such as:

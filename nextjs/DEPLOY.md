@@ -1,5 +1,38 @@
 # Deploy Next.js Telegram Bot to Vercel
 
+## 🔄 How Telegram Webhooks Work
+
+```
+┌─────────────┐     ┌─────────────────┐     ┌──────────────────────┐
+│   User      │────▶│  Telegram       │────▶│  Your Vercel App     │
+│  (Telegram) │     │  Servers        │     │  /api/webhook        │
+└─────────────┘     └─────────────────┘     └──────────────────────┘
+      │                    │                         │
+      │  1. User sends     │  2. Telegram forwards   │  3. Your code
+      │     message        │     message to your     │     processes &
+      │                    │     webhook URL         │     sends response
+      └────────────────────┴─────────────────────────┘
+```
+
+### How it works:
+
+1. **User sends a message** to your bot on Telegram
+2. **Telegram receives the message** and checks if a webhook URL is registered
+3. **Telegram sends a POST request** to your webhook URL (`https://your-app.vercel.app/api/webhook`) with the message data
+4. **Your webhook handler** (`app/api/webhook/route.ts`) receives the request, processes it, and sends a response back using the Bot API
+5. **User receives the response** in Telegram
+
+### Why set webhook?
+
+By default, Telegram doesn't know where to send messages. You must **register your webhook URL** with Telegram using the `setWebhook` API call. This tells Telegram: "Send all messages for this bot to this URL."
+
+```bash
+# This command registers your URL with Telegram
+npm run set-webhook https://your-project.vercel.app/api/webhook
+```
+
+---
+
 ## 🚀 Quick Deployment Steps
 
 ### 1. Install Dependencies Locally (for webhook setup)
@@ -57,11 +90,35 @@ vercel --prod
 
 ### 4. Set Webhook
 
-After deployment, get your Vercel URL and set the webhook:
+After deployment, get your Vercel URL and register the webhook with Telegram.
+
+#### Option A: Browser URL (Easiest - No npm needed)
+
+Just open this URL in your browser:
+
+```
+https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/setWebhook?url=https://your-project.vercel.app/api/webhook
+```
+
+Replace `your-project.vercel.app` with your actual Vercel URL.
+
+#### Option B: Using curl
+
+```bash
+curl "https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/setWebhook?url=https://your-project.vercel.app/api/webhook"
+```
+
+#### Option C: Using npm script
 
 ```bash
 cd nextjs
 npm run set-webhook https://your-project.vercel.app/api/webhook
+```
+
+#### Verify webhook is set:
+
+```
+https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/getWebhookInfo
 ```
 
 ### 5. Test Your Bot

@@ -145,6 +145,30 @@ if ($text === '/start') {
 
 ### Set the webhook URL:
 
+#### Option A: Browser URL (Easiest - No code needed)
+
+Just open this URL in your browser:
+
+```
+https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=https://yourdomain.com/webhook.php
+```
+
+#### Option B: Using curl
+
+```bash
+curl "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=https://yourdomain.com/webhook.php"
+```
+
+#### Option C: POST request (recommended)
+
+```bash
+curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook" \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://yourdomain.com/webhook.php"}'
+```
+
+#### Option D: Using PHP SDK
+
 ```php
 <?php
 require __DIR__ . '/vendor/autoload.php';
@@ -160,6 +184,12 @@ $response = $telegram->setWebhook([
 ]);
 
 echo $response ? 'Webhook set successfully!' : 'Failed to set webhook';
+```
+
+#### Verify webhook is set:
+
+```
+https://api.telegram.org/bot<BOT_TOKEN>/getWebhookInfo
 ```
 
 ## 🔄 Step 6: Using Long Polling (Alternative)
