@@ -20,7 +20,7 @@
    - **Dockerfile Path**: `./Dockerfile`
 5. Add **Environment Variable**:
    - Key: `TELEGRAM_BOT_TOKEN`
-   - Value: `8262047387:AAEaQYI7PKAxLCwabtmM9jrnE9rW8nvWU50`
+   - Value: `<YOUR_BOT_TOKEN>`
 6. Click **"Create Web Service"**
 
 ### Method 2: Using render.yaml (Blueprint)
@@ -42,19 +42,19 @@ After deployment, get your Render URL (e.g., `https://telegram-bot-php.onrender.
 Open this in your browser:
 
 ```
-https://api.telegram.org/bot8262047387:AAEaQYI7PKAxLCwabtmM9jrnE9rW8nvWU50/setWebhook?url=https://telegram-bot-php.onrender.com/webhook.php
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://telegram-bot-php.onrender.com/webhook.php
 ```
 
 ### Option B: Using curl
 
 ```bash
-curl "https://api.telegram.org/bot8262047387:AAEaQYI7PKAxLCwabtmM9jrnE9rW8nvWU50/setWebhook?url=https://telegram-bot-php.onrender.com/webhook.php"
+curl "https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://telegram-bot-php.onrender.com/webhook.php"
 ```
 
 ### Verify webhook:
 
 ```
-https://api.telegram.org/bot8262047387:AAEaQYI7PKAxLCwabtmM9jrnE9rW8nvWU50/getWebhookInfo
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getWebhookInfo
 ```
 
 ---
@@ -68,7 +68,7 @@ cd php
 docker build -t telegram-bot-php .
 
 # Run container
-docker run -p 8080:80 -e TELEGRAM_BOT_TOKEN=8262047387:AAEaQYI7PKAxLCwabtmM9jrnE9rW8nvWU50 telegram-bot-php
+docker run -p 8080:80 -e TELEGRAM_BOT_TOKEN=<YOUR_BOT_TOKEN> telegram-bot-php
 ```
 
 Visit http://localhost:8080

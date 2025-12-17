@@ -51,7 +51,7 @@ npm install
 ### 2. Create .env File (for local testing)
 
 ```bash
-TELEGRAM_BOT_TOKEN=8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw
+TELEGRAM_BOT_TOKEN=<YOUR_BOT_TOKEN>
 ```
 
 ### 3. Deploy to Vercel
@@ -70,7 +70,7 @@ TELEGRAM_BOT_TOKEN=8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw
 7. After deployment, go to **Settings** → **Environment Variables**
 8. Add:
    - Name: `TELEGRAM_BOT_TOKEN`
-   - Value: `8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw`
+   - Value: `<YOUR_BOT_TOKEN>`
 9. Go to **Deployments** → Click ⋯ → **Redeploy**
 
 #### Option B: Vercel CLI
@@ -88,7 +88,7 @@ vercel
 
 # Add environment variable
 vercel env add TELEGRAM_BOT_TOKEN
-# Paste: 8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw
+# Paste: <YOUR_BOT_TOKEN>
 
 # Deploy to production
 vercel --prod
@@ -103,7 +103,7 @@ After deployment, get your Vercel URL and register the webhook with Telegram.
 Just open this URL in your browser:
 
 ```
-https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/setWebhook?url=https://your-project.vercel.app/api/webhook
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://your-project.vercel.app/api/webhook
 ```
 
 Replace `your-project.vercel.app` with your actual Vercel URL.
@@ -111,7 +111,7 @@ Replace `your-project.vercel.app` with your actual Vercel URL.
 #### Option B: Using curl
 
 ```bash
-curl "https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/setWebhook?url=https://your-project.vercel.app/api/webhook"
+curl "https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://your-project.vercel.app/api/webhook"
 ```
 
 #### Option C: Using npm script
@@ -124,7 +124,7 @@ npm run set-webhook https://your-project.vercel.app/api/webhook
 #### Verify webhook is set:
 
 ```
-https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/getWebhookInfo
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getWebhookInfo
 ```
 
 ### 5. Test Your Bot

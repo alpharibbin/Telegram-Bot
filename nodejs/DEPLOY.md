@@ -9,7 +9,7 @@
 ## 🔄 How Telegram Webhooks Work
 
 ```
-┌─────────────┐     ┌─────────────────┐     ┌──────────────────────┐
+┌─────────────┐      ┌─────────────────┐     ┌──────────────────────┐
 │   User      │────▶│  Telegram       │────▶│  Your Vercel App     │
 │  (Telegram) │     │  Servers        │     │  /api/webhook        │
 └─────────────┘     └─────────────────┘     └──────────────────────┘
@@ -35,7 +35,7 @@
 6. After deployment, go to **Settings** → **Environment Variables**
 7. Add:
    - Name: `TELEGRAM_BOT_TOKEN`
-   - Value: `8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw`
+   - Value: `<YOUR_BOT_TOKEN>`
 8. Go to **Deployments** → Click ⋯ → **Redeploy**
 
 ### 2. Set Webhook
@@ -47,7 +47,7 @@ After deployment, register the webhook with Telegram.
 Just open this URL in your browser:
 
 ```
-https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/setWebhook?url=https://your-project.vercel.app/api/webhook
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://your-project.vercel.app/api/webhook
 ```
 
 Replace `your-project.vercel.app` with your actual Vercel URL.
@@ -55,13 +55,13 @@ Replace `your-project.vercel.app` with your actual Vercel URL.
 #### Option B: Using curl
 
 ```bash
-curl "https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/setWebhook?url=https://your-project.vercel.app/api/webhook"
+curl "https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://your-project.vercel.app/api/webhook"
 ```
 
 #### Option C: POST request (recommended for production)
 
 ```bash
-curl -X POST "https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/setWebhook" \
+curl -X POST "https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook" \
   -H "Content-Type: application/json" \
   -d '{"url": "https://your-project.vercel.app/api/webhook"}'
 ```
@@ -77,7 +77,7 @@ npm run set-webhook https://your-project.vercel.app/api/webhook
 #### Verify webhook is set:
 
 ```
-https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/getWebhookInfo
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getWebhookInfo
 ```
 
 ### 3. Test Your Bot

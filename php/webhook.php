@@ -4,7 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Telegram\Bot\Api;
 
 // Get bot token from environment variable
-$token = getenv('TELEGRAM_BOT_TOKEN') ?: '8262047387:AAEaQYI7PKAxLCwabtmM9jrnE9rW8nvWU50';
+$token = getenv('TELEGRAM_BOT_TOKEN') ?: 'YOUR_BOT_TOKEN_HERE';
 $telegram = new Api($token);
 
 // Get the webhook update

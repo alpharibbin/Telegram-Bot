@@ -16,7 +16,7 @@ https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=https://your-project.verc
 
 **Example with your token:**
 ```
-https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/setWebhook?url=https://your-project.vercel.app/api/webhook
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://your-project.vercel.app/api/webhook
 ```
 
 ✔ No npm needed  
@@ -85,7 +85,7 @@ https://api.telegram.org/bot<BOT_TOKEN>/getWebhookInfo
 
 **Example:**
 ```
-https://api.telegram.org/bot8581525362:AAFiKs_0uF5SOoIs7-LpVf3MFhzqugbVnkw/getWebhookInfo
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getWebhookInfo
 ```
 
 You should see:
