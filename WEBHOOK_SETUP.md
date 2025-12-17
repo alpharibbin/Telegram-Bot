@@ -4,6 +4,10 @@
 
 After deploying your bot, you need to tell Telegram where to send messages. Here are all the ways to do it:
 
+**Replace these values:**
+- `<BOT_TOKEN>` → Your bot token from BotFather
+- `<YOUR_WEBHOOK_URL>` → Your deployment URL (e.g., `https://your-app.vercel.app/api/webhook`)
+
 ---
 
 ## ✅ Method 1: Browser URL (Easiest)
@@ -11,12 +15,7 @@ After deploying your bot, you need to tell Telegram where to send messages. Here
 Just open this URL in your browser:
 
 ```
-https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=https://your-project.vercel.app/api/webhook
-```
-
-**Example with your token:**
-```
-https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://your-project.vercel.app/api/webhook
+https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<YOUR_WEBHOOK_URL>
 ```
 
 ✔ No npm needed  
@@ -29,14 +28,14 @@ https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://your-project
 
 ### Simple GET request:
 ```bash
-curl "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=https://your-project.vercel.app/api/webhook"
+curl "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<YOUR_WEBHOOK_URL>"
 ```
 
 ### POST request (recommended for production):
 ```bash
 curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook" \
   -H "Content-Type: application/json" \
-  -d '{"url": "https://your-project.vercel.app/api/webhook"}'
+  -d '{"url": "<YOUR_WEBHOOK_URL>"}'
 ```
 
 ### With additional options:
@@ -44,7 +43,7 @@ curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook" \
 curl -X POST "https://api.telegram.org/bot<BOT_TOKEN>/setWebhook" \
   -H "Content-Type: application/json" \
   -d '{
-    "url": "https://your-project.vercel.app/api/webhook",
+    "url": "<YOUR_WEBHOOK_URL>",
     "allowed_updates": ["message", "callback_query"]
   }'
 ```
@@ -58,7 +57,7 @@ fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/setWebhook`, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    url: "https://your-project.vercel.app/api/webhook"
+    url: "<YOUR_WEBHOOK_URL>"
   })
 });
 ```
@@ -70,22 +69,15 @@ fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/setWebhook`, {
 ```bash
 cd nextjs  # or nodejs
 npm install
-npm run set-webhook https://your-project.vercel.app/api/webhook
+npm run set-webhook <YOUR_WEBHOOK_URL>
 ```
 
 ---
 
 ## 🔍 Verify Webhook is Set
 
-Open this URL in browser or use curl:
-
 ```
 https://api.telegram.org/bot<BOT_TOKEN>/getWebhookInfo
-```
-
-**Example:**
-```
-https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getWebhookInfo
 ```
 
 You should see:
@@ -93,7 +85,7 @@ You should see:
 {
   "ok": true,
   "result": {
-    "url": "https://your-project.vercel.app/api/webhook",
+    "url": "<YOUR_WEBHOOK_URL>",
     "has_custom_certificate": false,
     "pending_update_count": 0
   }
@@ -118,11 +110,3 @@ https://api.telegram.org/bot<BOT_TOKEN>/deleteWebhook
 | curl POST request  | ❌        | ⭐⭐⭐⭐⭐     |
 | Node.js fetch      | ❌        | ⭐⭐⭐⭐      |
 | npm script         | ✅        | ⭐⭐         |
-
----
-
-## 🔑 Replace These Values
-
-- `<BOT_TOKEN>` → Your bot token from BotFather
-- `https://your-project.vercel.app` → Your actual Vercel deployment URL
-
